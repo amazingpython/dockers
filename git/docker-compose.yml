@@ -1,0 +1,7 @@
+version: "2"
+services:
+  git:
+    image: git
+    command: top -b
+    volumes:
+     - <your project absolute path>:/practice
