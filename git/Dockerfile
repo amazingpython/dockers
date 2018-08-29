@@ -18,6 +18,6 @@ WORKDIR /practice
 USER $user
 
 RUN git config --global user.name "<git user name>"
-#RUN git config --global user.email "<git email address>"
+RUN git config --global user.email "<git email address>"
 
 LABEL maintainer="<maintainer>" version="1.0"
