@@ -1,8 +1,8 @@
 ## Git Docker With Ubuntu
-It is possible that an user can have multiple git configuration and it is little hard to maintain all these different configurations in a single desktop system. My intention here is to create a git environment from a Ubuntu docker image. So, this docker image build from Ubuntu has git and vim installed. We can configure our own git configure inside this docker, which is totally different than the host system.
+It is possible that a user can have multiple git configurations and it is little hard to maintain all these different configurations in a single desktop system. My intention here is to create a git environment from an Ubuntu docker image. So, this docker image build from Ubuntu has git and vim installed. We can configure our own git configure inside this docker, which is totally different than the host system.
 
 #### Prerequisite
-docker/docker-compose installed and setup on an Ubuntu system.
+docker/docker-compose installed and set up on an Ubuntu system.
 
 #### This directory contains the following files.
 - **Dockerfile** - Build and creates a docker image name git
@@ -23,7 +23,7 @@ RUN git config --global user.email "<git email address>"
 LABEL maintainer="<maintainer name>" version="1.0"
 ```
 - Execute this command in your terminal `docker image build -t git . -f Dockerfile`
-- Previous step will create a docker image name **git**
+- The previous step will create a docker image name **git**
 - Now change the path you want to mount from your host directory into docker container
 - You can change this (`<your project absolute path>:/practice`)  in `start_git.sh` or `docker-compose.yaml` file
 - Execute `./start_git.sh` to start the docker container and log into it.
@@ -33,7 +33,7 @@ LABEL maintainer="<maintainer name>" version="1.0"
 If you want to keep your container running, you can follow the below steps
 
 - Alternatively, you can use `docker-compose -f docker-compose.yml up -d`, to start the container.
-- To attach an bash shell to this container, you can use - `docker exec -it docker_git_1 bash`
+- To attach a bash shell to this container, you can use - `docker exec -it docker_git_1 bash`
 
 
 
